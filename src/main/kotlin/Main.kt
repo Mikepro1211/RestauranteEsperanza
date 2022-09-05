@@ -48,6 +48,9 @@ fun main(args: Array<String>) {
             when {
                 seleccion == 1 -> {
                     println("Ingrese Nueva Venta")
+                    val produucto = Producto()
+                    produucto.calculo()
+
                 }
                 seleccion == 2 -> {
                     println("Consulta tu Inventario")
@@ -79,6 +82,8 @@ fun main(args: Array<String>) {
                 when {
                     seleccion == 1 -> {
                         println("Ingrese Nueva Venta")
+                        val vendedor = Producto()
+                         vendedor.calculo()
                     }
                     seleccion == 2 -> {
                         println("Consulta tu Inventario")
@@ -105,6 +110,7 @@ fun main(args: Array<String>) {
                     when {
                         seleccion == 1 -> {
                             println("Consulta tu Inventario")
+
                         }
                         seleccion == 2 -> {
                             println("Hasta Luego")
