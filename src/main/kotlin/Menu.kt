@@ -79,7 +79,7 @@ class Menu {
                     println("\n ***** Bienvenido Administrador *****\n")
 
                     //Menu para admin
-
+                    imprimirAdmin()
                     fun opcionAdmin() {
                             do{
                                 imprimirAdmin()
@@ -125,7 +125,7 @@ class Menu {
                         }while (continuar==1)
                     }
                     //manda a llamar la funcion opcionAdmin
-
+                   
                     when {
 
                         seleccion == 1 -> {
