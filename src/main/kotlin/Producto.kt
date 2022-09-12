@@ -37,39 +37,46 @@ class Producto {
          articulos = readLine()!!.toInt()
         println("¿Cuanta cantidad?")
         var cantidad:Int =0
+           var disminucion = Inventario()
         cantidad =readLine()!!.toInt()
+         disminucion.restaProducto(articulos,cantidad)
          when(articulos){
-             1-> totales[0] =(total(cantidad, precioHotdog))
-             2-> totales[1] =(total(cantidad,precionHamburguesa))
-             3-> totales[2] =(total(cantidad,precioPizza))
-             4-> totales[3] =(total(cantidad,precioDonna))
-             5-> totales[4] =(total(cantidad,precioLasana))
-             6-> totales[5] =(total(cantidad,precioEnsalda))
-             7-> totales[6] =(total(cantidad,precioSopa))
-             8-> totales[7] =(total(cantidad,precioHelado))
-             9-> totales[8] =(total(cantidad,precioJugos))
-             10-> totales[9] =(total(cantidad,precioPupusas))
+             1-> totales[0] =(total(cantidad,   precioHotdog))
+             2-> totales[1] =(total(cantidad,   precionHamburguesa))
+             3-> totales[2] =(total(cantidad,   precioPizza))
+             4-> totales[3] =(total(cantidad,   precioDonna))
+             5-> totales[4] =(total(cantidad,   precioLasana))
+             6-> totales[5] =(total(cantidad,   precioEnsalda))
+             7-> totales[6] =(total(cantidad,   precioSopa))
+             8-> totales[7] =(total(cantidad,   precioHelado))
+             9-> totales[8] =(total(cantidad,   precioJugos))
+             10-> totales[9] =(total(cantidad,  precioPupusas))
+             else -> println("Seleccione un articulo valido")
          }
             println("Dese agregar otro producto? (1.Si) (2.no)")
             val continuar: Int = readLine()!!.toInt()
         }while (continuar==1)
          println("Total de la factura")
-         for (i in 0..9){
-             when(i){
-                 0-> println("HotDog ${totales[i]}")
-                 1-> println("Hamburguesa ${totales[i]}")
-                 2-> println("Pizza ${totales[i]}")
-                 3-> println("Donna ${totales[i]}")
-                 4-> println("lasaña ${totales[i]}")
-                 5-> println("Ensalada ${totales[i]}")
-                 6-> println("Sopa ${totales[i]}")
-                 7-> println("helados ${totales[i]}")
-                 8-> println("Jugos ${totales[i]}")
-                 9-> println("pupusota ${totales[i]}")
+         for (i in 0..9) {
+                 when (i) {
+
+                     0 -> if (totales[i]>0)println("HotDog       ${totales[i]}")
+                     1 -> if (totales[i]>0)println("Hamburguesa  ${totales[i]}")
+                     2 -> if (totales[i]>0)println("Pizza        ${totales[i]}")
+                     3 -> if (totales[i]>0)println("Donna        ${totales[i]}")
+                     4 -> if (totales[i]>0)println("lasaña       ${totales[i]}")
+                     5 -> if (totales[i]>0)println("Ensalada     ${totales[i]}")
+                     6 -> if (totales[i]>0)println("Sopa         ${totales[i]}")
+                     7 -> if (totales[i]>0)println("helados      ${totales[i]}")
+                     8 -> if (totales[i]>0)println("Jugos        ${totales[i]}")
+                     9 -> if (totales[i]>0)println("pupusa       ${totales[i]}")
+                 }
+
+                 sumatotal += totales[i]
+
              }
-             sumatotal+=totales[i]
-         }
-        println("El total es $sumatotal")
+             println("El total es   $sumatotal")
+
     }
      fun total( cantidad:Int ,  precio:Float): Float {
          total = cantidad*precio
