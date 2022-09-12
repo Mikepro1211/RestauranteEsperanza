@@ -18,8 +18,7 @@ class Menu {
     var invpsw = "invitado123"
 
     var intento = 1
-    var variable1: Int = 0
-    var variable2: Int = 0
+
 
 
     fun bienvenida(){
@@ -86,7 +85,7 @@ class Menu {
                                 imprimirAdmin()
                             val seleccion = readln().toInt()
 
-<<<<<<< HEAD
+
                             when {
 
                                 seleccion == 1 -> {
@@ -126,7 +125,7 @@ class Menu {
                         }while (continuar==1)
                     }
                     //manda a llamar la funcion opcionAdmin
-=======
+
                     when {
 
                         seleccion == 1 -> {
@@ -151,7 +150,7 @@ class Menu {
                 }
                 }
                 //manda a llamar la funcion opcionAdmin
->>>>>>> 0ca44f8343d17474ce7b42c581aaac82c0102396
+
                 opcionAdmin()
 
 
@@ -240,7 +239,7 @@ class Menu {
         println("!El sistema está desactivado!")
         println("Intertar de nuevo")
     }
-<<<<<<< HEAD
+
 
     fun opcionesAdmin(){
 
@@ -251,6 +250,5 @@ class Menu {
         println(mensaje)
         println("*****************************************************************************")
     }
-=======
->>>>>>> 0ca44f8343d17474ce7b42c581aaac82c0102396
+
 }
