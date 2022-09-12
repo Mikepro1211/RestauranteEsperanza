@@ -19,9 +19,10 @@ class Menu {
 
     var intento = 1
 
+
     fun bienvenida(){
         println(" *****  Bienvenido al sistema Restaurante Esperanza  *****")
-        println("               Favor Ingrese credenciales\n\n             ")
+        println("                Favor Ingrese credenciales\n              ")
     }
     fun ingresoUsuario(){
         //Ingresar usuario
@@ -39,20 +40,32 @@ class Menu {
         println("2- Consultar Inventario")
         println("3- Cambiar contraseña")
         println("4- Salir del sistema")
-        print("Ingrese digito: ")
+        print("\n-> Ingrese digito: ")
     }
     fun imprimirventas(){
         println(" ---------- Menu ----------")
         println("1- Venta Nueva")
         println("2- Consultar Inventario")
         println("3- Salir del sistema")
-        print("Ingrese digito: ")
+        print("\n-> Ingrese digito: ")
     }
     fun imprimirinvitado(){
         println(" ---------- Menu ----------")
         println("1- Consultar Inventario")
         println("2- Salir del sistema")
-        print("Ingrese digito: ")
+        print("\n-> Ingrese digito: ")
+    }
+
+    fun cambioContrasenia(){
+        print("\nIntroduce ID de empleado: ")
+        val id = readln().toInt()
+        print("Introduce contraseña actual: ")
+        admpsw = readln().toString()
+        print("Introduce nueva contraseña: ")
+        admpsw = readln().toString()
+
+        println("\n******* Su contraseña fue actualizada con exito *******\n")
+        usuariosMenu()
     }
 
     fun usuariosMenu(){
@@ -71,16 +84,18 @@ class Menu {
                     val seleccion = readln().toInt()
 
                     when {
+
                         seleccion == 1 -> {
-                            println("Ingrese Nueva Venta")
+                            println("\nIngrese Nueva Venta")
                             val produucto = Producto()
                             produucto.calculo()
                         }
                         seleccion == 2 -> {
-                            println("Consulta tu Inventario")
+                            println("\nConsulta tu Inventario")
                         }
                         seleccion == 3 -> {
-                            println("Cambia tu Contraseña")
+                            println("\nCambia tu Contraseña")
+                            cambioContrasenia()
                         }
                         seleccion == 4 -> {
                             println("\n-> Hasta Luego\n")
@@ -153,7 +168,7 @@ class Menu {
                     else {
                         intento ++
                         println("\n¡Usuario no registrado!")
-                        println("Intento No. $intento \n\n\n")
+                        println("Intento No. $intento \n\n")
                     }
                 }
             }
@@ -161,9 +176,5 @@ class Menu {
 
         println("!El sistema está desactivado!")
         println("Intertar de nuevo")
-    }
-
-    fun opcionesAdmin(){
-
     }
 }
