@@ -18,7 +18,8 @@ class Menu {
     var invpsw = "invitado123"
 
     var intento = 1
-
+    var variable1: Int = 0
+    var variable2: Int = 0
 
     fun bienvenida(){
         println(" *****  Bienvenido al sistema Restaurante Esperanza  *****")
@@ -86,12 +87,21 @@ class Menu {
                     when {
 
                         seleccion == 1 -> {
-                            println("\nIngrese Nueva Venta")
-                            val produucto = Producto()
-                            produucto.calculo()
+                            do {
+                                println("\nIngrese Nueva Venta")
+                                val produucto = Producto()
+                                produucto.calculo()
+                                println("¿Desea continuar con otra compra? 1.si 2.no")
+                                val continuar = readln()!!.toInt()
+                            } while (continuar == 1)
+                            mensaje("Hasta Luego Gracias por utilizar sistema de ventas de Restaurante")
+
                         }
                         seleccion == 2 -> {
-                            println("\nConsulta tu Inventario")
+                            println("\nBienvenido al inventario")
+                            val inventario1 = Inventario()
+                            inventario1.mostrarProducto()
+                            inventario1.mostrarmensaje()
                         }
                         seleccion == 3 -> {
                             println("\nCambia tu Contraseña")
@@ -120,12 +130,21 @@ class Menu {
 
                         when {
                             seleccion == 1 -> {
-                                println("Ingrese Nueva Venta")
-                                val vendedor = Producto()
-                                vendedor.calculo()
+                                do {
+                                    println("Ingrese Nueva Venta")
+                                    val vendedor = Producto()
+                                    vendedor.calculo()
+                                    println("¿Desea continuar con otra compra? 1.si 2.no")
+                                    val continuar = readln()!!.toInt()
+                                }while(continuar==1)
+                                mensaje("Hasta Luego Gracias por utilizar sistema de ventas de Restaurante Esperanza")
                             }
                             seleccion == 2 -> {
-                                println("Consulta tu Inventario")
+                                println("Bienvenido al Inventario")
+                                val inventario1 = Inventario()
+                                inventario1.mostrarProducto()
+                                inventario1.mostrarmensaje()
+
                             }
                             seleccion == 3 -> {
                                 println("\n-> Hasta Luego\n")
@@ -151,6 +170,9 @@ class Menu {
                             when {
                                 seleccion == 1 -> {
                                     println("Consulta tu Inventario")
+                                    val inventario1 = Inventario()
+                                    inventario1.mostrarProducto()
+                                    inventario1.mostrarmensaje()
 
                                 }
                                 seleccion == 2 -> {
@@ -176,5 +198,11 @@ class Menu {
 
         println("!El sistema está desactivado!")
         println("Intertar de nuevo")
+    }
+
+    fun mensaje(mensaje:String){
+        println("*****************************************************************************")
+        println(mensaje)
+        println("*****************************************************************************")
     }
 }
