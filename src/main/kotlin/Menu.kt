@@ -18,6 +18,8 @@ class Menu {
     var invpsw = "invitado123"
 
     var intento = 1
+    var variable1: Int = 0
+    var variable2: Int = 0
 
     fun bienvenida(){
         println(" *****  Bienvenido al sistema Restaurante Esperanza  *****")
@@ -61,54 +63,58 @@ class Menu {
             ingresoUsuario()
 
             if (user == adm1 && admpsw == password || user == adm2 && admpsw == password) {
-                do {
+
                     println("\n ***** Bienvenido Administrador *****\n")
 
                     //Menu para admin
-                    imprimirAdmin()
+
                     fun opcionAdmin() {
+                            do{
+                                imprimirAdmin()
+                            val seleccion = readln().toInt()
 
-                        val seleccion = readln().toInt()
+                            when {
 
-                        when {
-                            seleccion == 1 -> {
-                                do {
-                                    println("Ingrese Nueva Venta")
-                                    val produucto = Producto()
-                                    produucto.calculo()
-                                    println("¿Desea continuar con otra compra? 1.si 2.no")
-                                    var continuar = readln()!!.toInt()
-                                } while (continuar == 1)
-                                mensaje("Hasta Luego Gracias por utilizar sistema de ventas de Restaurante Esperanza")
+                                seleccion == 1 -> {
+                                    do {
+                                        println("Ingrese Nueva Venta")
+                                        var produucto = Producto()
+                                        produucto.calculo()
+                                        println("¿Desea continuar con otra compra? 1.si 2.no")
+                                        var continuar = readln()!!.toInt()
+                                    } while (continuar == 1)
+                                    mensaje("Hasta Luego Gracias por utilizar sistema de ventas de Restaurante Esperanza")
+                                }
+
+                                seleccion == 2 -> {
+                                    mensaje("Bienvenido al invetario")
+                                    var inventario1 = Inventario()
+                                    inventario1.mostrarProducto()
+                                    inventario1.mostrarmensaje()
+
+                                }
+
+                                seleccion == 3 -> {
+                                    println("Cambia tu Contraseña")
+                                }
+
+                                seleccion == 4 -> {
+                                    mensaje("Hasta Luego Gracias por utilizar sistema de ventas de Restaurante Esperanza")
+                                    usuariosMenu()
+                                }
+
+                                else -> {
+                                    println("Ingrese una Opcion Valida")
+                                }
                             }
-
-                            seleccion == 2 -> {
-                                mensaje("Bienvenido al invetario")
-                                val inventario1 = Inventario()
-                                inventario1.mostrarProducto()
-                                inventario1.mostrarmensaje()
-
-                            }
-
-                            seleccion == 3 -> {
-                                println("Cambia tu Contraseña")
-                            }
-
-                            seleccion == 4 -> {
-                                mensaje("Hasta Luego Gracias por utilizar sistema de ventas de Restaurante Esperanza")
-                                usuariosMenu()
-                            }
-
-                            else -> {
-                                println("Ingrese una Opcion Valida")
-                            }
-                        }
+                            println("¿desea continuar? 1.si 2.no")
+                            var  continuar = readln()!!.toInt()
+                        }while (continuar==1)
                     }
                     //manda a llamar la funcion opcionAdmin
-                    opcionAdmin()
-                    println("¿desea continuar? 1.si 2.no")
-                   var  continuar = readln()!!.toInt()
-                }while(continuar==1)
+                opcionAdmin()
+
+
             } else {
                 if (user == vdr1 && vdrpsw == password || user == vdr2 && vdrpsw == password) {
 
@@ -164,10 +170,14 @@ class Menu {
                             when {
                                 seleccion == 1 -> {
                                     println("Consulta tu Inventario")
+                                    var inventario1 = Inventario()
+                                    inventario1.mostrarProducto()
+                                    inventario1.mostrarmensaje()
 
                                 }
                                 seleccion == 2 -> {
                                     println("\n-> Hasta Luego\n")
+
                                     usuariosMenu()
                                 }
                                 else -> {

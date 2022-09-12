@@ -1,7 +1,4 @@
 class Inventario {
-
-
-
     var Hotdog: Int=50
     var Hamburguesa :Int=300
     var Pizza: Int=60
@@ -14,9 +11,10 @@ class Inventario {
     var Pupusas: Int=150
 
      fun restaProducto( v1:Int ,  v2: Int){
+
           when(v1){
 
-              1-> Hotdog=(Hotdog-v2)
+              1-> Hotdog-v2
               2-> Hamburguesa-v2
               3-> Pizza-v2
               4-> Donna-v2
@@ -27,6 +25,7 @@ class Inventario {
               9->Jugos-v2
               10->Pupusas-v2
           }
+
      }
 
 
@@ -81,10 +80,4 @@ class Inventario {
         }while (con==1)
         println("Hasta luego")
     }
-
-
-
-
-
-
 }

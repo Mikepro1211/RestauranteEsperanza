@@ -26,7 +26,7 @@ class Producto {
         println("10. Pupusas   c/u  $precioPupusas" )
     }
      var totales = FloatArray(10)
-
+    var disminucion = Inventario()
     fun calculo(){
         do {
 
@@ -37,9 +37,13 @@ class Producto {
          articulos = readLine()!!.toInt()
         println("¿Cuanta cantidad?")
         var cantidad:Int =0
-           var disminucion = Inventario()
+
+
         cantidad =readLine()!!.toInt()
-         disminucion.restaProducto(articulos,cantidad)
+
+            var dato = Menu()
+            dato.variable1=articulos
+            dato.variable2=cantidad
          when(articulos){
              1-> totales[0] =(total(cantidad,   precioHotdog))
              2-> totales[1] =(total(cantidad,   precionHamburguesa))
