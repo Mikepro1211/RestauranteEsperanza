@@ -133,21 +133,25 @@ class Menu {
                             val produucto = Producto()
                             produucto.calculo()
                         }
+
                         seleccion == 2 -> {
                             println("\nConsulta tu Inventario")
                         }
+
                         seleccion == 3 -> {
                             println("\nCambia tu Contraseña")
                             cambioContrasenia()
                         }
+
                         seleccion == 4 -> {
                             println("\n-> Hasta Luego\n")
                             usuariosMenu()
                         }
+
                         else -> {
                             println("Ingrese una Opcion Valida")
                         }
-                }
+                    }
                 }
                 //manda a llamar la funcion opcionAdmin
 
@@ -239,6 +243,7 @@ class Menu {
         println("!El sistema está desactivado!")
         println("Intertar de nuevo")
     }
+
 
 
     fun opcionesAdmin(){
