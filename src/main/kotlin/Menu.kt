@@ -21,9 +21,10 @@ class Menu {
     var variable1: Int = 0
     var variable2: Int = 0
 
+
     fun bienvenida(){
         println(" *****  Bienvenido al sistema Restaurante Esperanza  *****")
-        println("               Favor Ingrese credenciales\n\n             ")
+        println("                Favor Ingrese credenciales\n              ")
     }
     fun ingresoUsuario(){
         //Ingresar usuario
@@ -41,20 +42,32 @@ class Menu {
         println("2- Consultar Inventario")
         println("3- Cambiar contraseña")
         println("4- Salir del sistema")
-        print("Ingrese digito: ")
+        print("\n-> Ingrese digito: ")
     }
     fun imprimirventas(){
         println(" ---------- Menu ----------")
         println("1- Venta Nueva")
         println("2- Consultar Inventario")
         println("3- Salir del sistema")
-        print("Ingrese digito: ")
+        print("\n-> Ingrese digito: ")
     }
     fun imprimirinvitado(){
         println(" ---------- Menu ----------")
         println("1- Consultar Inventario")
         println("2- Salir del sistema")
-        print("Ingrese digito: ")
+        print("\n-> Ingrese digito: ")
+    }
+
+    fun cambioContrasenia(){
+        print("\nIntroduce ID de empleado: ")
+        val id = readln().toInt()
+        print("Introduce contraseña actual: ")
+        admpsw = readln().toString()
+        print("Introduce nueva contraseña: ")
+        admpsw = readln().toString()
+
+        println("\n******* Su contraseña fue actualizada con exito *******\n")
+        usuariosMenu()
     }
 
     fun usuariosMenu(){
@@ -73,6 +86,7 @@ class Menu {
                                 imprimirAdmin()
                             val seleccion = readln().toInt()
 
+<<<<<<< HEAD
                             when {
 
                                 seleccion == 1 -> {
@@ -112,6 +126,32 @@ class Menu {
                         }while (continuar==1)
                     }
                     //manda a llamar la funcion opcionAdmin
+=======
+                    when {
+
+                        seleccion == 1 -> {
+                            println("\nIngrese Nueva Venta")
+                            val produucto = Producto()
+                            produucto.calculo()
+                        }
+                        seleccion == 2 -> {
+                            println("\nConsulta tu Inventario")
+                        }
+                        seleccion == 3 -> {
+                            println("\nCambia tu Contraseña")
+                            cambioContrasenia()
+                        }
+                        seleccion == 4 -> {
+                            println("\n-> Hasta Luego\n")
+                            usuariosMenu()
+                        }
+                        else -> {
+                            println("Ingrese una Opcion Valida")
+                        }
+                }
+                }
+                //manda a llamar la funcion opcionAdmin
+>>>>>>> 0ca44f8343d17474ce7b42c581aaac82c0102396
                 opcionAdmin()
 
 
@@ -191,7 +231,7 @@ class Menu {
                     else {
                         intento ++
                         println("\n¡Usuario no registrado!")
-                        println("Intento No. $intento \n\n\n")
+                        println("Intento No. $intento \n\n")
                     }
                 }
             }
@@ -200,6 +240,7 @@ class Menu {
         println("!El sistema está desactivado!")
         println("Intertar de nuevo")
     }
+<<<<<<< HEAD
 
     fun opcionesAdmin(){
 
@@ -210,4 +251,6 @@ class Menu {
         println(mensaje)
         println("*****************************************************************************")
     }
+=======
+>>>>>>> 0ca44f8343d17474ce7b42c581aaac82c0102396
 }
